@@ -1,11 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>TEST</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LM Arena — Chat Log</title>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']],
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12141a;
+      --panel-alt: #0f1117;
+      --border: #1f2430;
+      --text: #e6e8eb;
+      --muted: #9aa0aa;
+      --accent: #3b82f6;
+      --code: #0a0c12;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial;
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 16px 14px 64px;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f3f4f6;
+    }
+
+    .header-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .model {
+      margin-top: 6px;
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #0b1220;
+      border: 1px solid #1e3a8a;
+      color: #93c5fd;
+    }
+
+    /* Messages */
+    .msg {
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .msg.user {
+      background: var(--panel-alt);
+    }
+
+    .msg.assistant {
+      background: var(--panel);
+    }
+
+    .role {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .content {
+      white-space: pre-wrap;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      margin: 1em 0 0.4em;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0.6em 0;
+    }
+
+    blockquote {
+      border-left: 3px solid #2c3345;
+      padding-left: 12px;
+      margin: 12px 0;
+      color: #cbd5e1;
+    }
+
+    pre, code {
+      background: var(--code);
+      border-radius: 8px;
+      padding: 0.4em 0.6em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+      font-size: 0.9em;
+      overflow-x: auto;
+    }
+
+    pre {
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      .page {
+        padding: 12px 10px 48px;
+      }
+      .msg {
+        padding: 14px 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>OK</h1>
-  <p>Если ты это видишь — Pages работает.</p>
+  <div class="page">
+
+    <div class="header">
+      <div class="header-title">LM Arena — Chat Log</div>
+      <div class="header-sub">Архив диалога</div>
+      <div class="model">model: gpt-5.2-high</div>
+    </div>
+
+    <!-- USER -->
+    <div class="msg user">
+      <div class="role">user</div>
+      <div class="content">
+Критически проанализируй многомировую интерпретацию квантовой механики
+с точки зрения её формализуемости в бесконечномерном гильбертовом пространстве.
+      </div>
+    </div>
+
+    <!-- ASSISTANT -->
+    <div class="msg assistant">
+      <div class="role">assistant</div>
+      <div class="content">
+Ключевая трудность MWI заключается в отсутствии
+базис-инвариантного определения ветви.
+
+Состояние
+\( \lvert \Psi \rangle \in \mathcal{H} \)
+может быть разложено бесконечным числом способов:
+
+$$
+\lvert \Psi \rangle = \sum_i c_i \lvert \psi_i \rangle
+$$
+
+В бесконечномерном сепарабельном гильбертовом пространстве
+никакое из этих разложений не обладает привилегированным
+онтологическим статусом без введения дополнительной структуры.
+      </div>
+    </div>
+
+    <!-- копируй дальше -->
+
+  </div>
 </body>
 </html>
